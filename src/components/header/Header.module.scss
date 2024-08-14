@@ -1,0 +1,8 @@
+.header {
+    padding: 8px 0;
+    &Content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
