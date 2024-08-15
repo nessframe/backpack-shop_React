@@ -7,9 +7,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.App {
-    background: #cbd7da;
-}
+body {background: #cbd7da;}
 .container {
     max-width: 1920px;
     margin: 0 auto;
@@ -30,7 +28,7 @@
 // ---- scroll ---- //
 ::-webkit-scrollbar {
     width: 8px;
-    background: #e5e5e5;
+    background: #cbd7da;
 }
 ::-webkit-scrollbar-thumb{
     background: #000;
