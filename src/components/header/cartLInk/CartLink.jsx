@@ -1,12 +1,14 @@
 import CartSvg from '../../../assets/CartSvg'
 import styles from './CartLink.module.scss'
 
-function CartLink() {
+function CartLink({windowWidth}) {
     return(
-        <div className={styles.cartLink}>
+        <a href='/' className={styles.cartLink}>
             <CartSvg />
-            cart
-        </div>
+            {windowWidth > 600 &&  (
+                <span>cart</span>
+            )}
+        </a>
     )
 }
 

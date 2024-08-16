@@ -1,6 +1,9 @@
-function LogoIcon() {
+import styles from './Logo.module.scss'
+
+function Logo() {
     return(
-        <svg width="4vmin" height="4vmin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className={styles.logo}>
+        <svg width="5vmin" height="5vmin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
@@ -10,7 +13,9 @@ function LogoIcon() {
                 ></path>
             </g>
         </svg>
+        <span>pack</span>
+        </div>
 );
 }
 
-export default LogoIcon;
+export default Logo;

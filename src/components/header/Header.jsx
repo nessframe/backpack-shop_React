@@ -1,7 +1,7 @@
+import Logo from '../UI/logo/Logo.jsx';
 import CartLink from './cartLInk/CartLink.jsx';
 import styles from './Header.module.scss'
 import LinksHeader from './links/LinksHeader.jsx';
-import LogoHeader from './logo/LogoHeader.jsx';
 
 function Header({windowWidth}) {
 
@@ -9,13 +9,15 @@ function Header({windowWidth}) {
         <header className={styles.header}>
             <div className='container'>
                 <div className={styles.headerContent}>
-                    <LogoHeader />
+                    <Logo />
 
                     <LinksHeader 
                         windowWidth={windowWidth}
                     />
 
-                    <CartLink />
+                    <CartLink 
+                        windowWidth={windowWidth}
+                    />
                 </div>
             </div>
         </header>
