@@ -1,0 +1,59 @@
+footer {
+    background: #fff;
+    padding: 20px 0;
+    div {
+        padding: 10px 0;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.email {
+
+    &Input {
+
+        input {
+            @media (min-width: 700px) {
+                width: 500px;
+            }
+            padding: 5px 0;
+            border: 0;
+        }
+        button {
+            background: #ff5c00;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 0;
+            font-weight: 300;
+            margin-right: 1vmin;
+        }
+        div {
+            width: 98%;
+            height: 1px;
+            padding: 0;
+            margin-top: 5px;
+            background: #464646;
+        }
+    }
+    span {
+        width: 20px;
+        height: 20px;
+        background: #000;
+    }
+}
+.contact {
+    display: flex;
+    justify-content: space-between;
+    p {
+        font-size: 1.8vmin;
+    }
+    &Links {
+        a {
+            color: #000;
+            margin-right: 4vmin;
+        }
+    }
+}

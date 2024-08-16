@@ -8,7 +8,7 @@ function Product({title, body, cost, currency, img}) {
             </div>
             <h3>{title}</h3>
             <p>{body}</p>
-            <cost>{cost}<span>{currency}</span></cost>
+            <h3>{cost}<span>{currency}</span></h3>
         </div>
     )
 }

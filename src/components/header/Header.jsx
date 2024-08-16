@@ -3,8 +3,7 @@ import styles from './Header.module.scss'
 import LinksHeader from './links/LinksHeader.jsx';
 import LogoHeader from './logo/LogoHeader.jsx';
 
-function Header() {
-
+function Header({windowWidth}) {
 
     return(
         <header className={styles.header}>
@@ -12,7 +11,9 @@ function Header() {
                 <div className={styles.headerContent}>
                     <LogoHeader />
 
-                    <LinksHeader />
+                    <LinksHeader 
+                        windowWidth={windowWidth}
+                    />
 
                     <CartLink />
                 </div>

@@ -16,15 +16,23 @@ function App() {
     {id: 6, title: 'Tripman Bag', body: 'description about this product', cost: 980, currency: '$', img: 'joly-bag.webp'},
   ])
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
+
+
     return (
       <main className='App'>
-            <Header />
+            <Header 
+              windowWidth={windowWidth}
+            />
             <Intro />
             <Filter />
             <Catalog 
               products={products}
             />
-            <Footer />
+            <Footer 
+              windowWidth={windowWidth}
+            />
       </main>
     )
   }

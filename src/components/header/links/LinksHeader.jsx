@@ -1,10 +1,6 @@
-import { useState } from 'react';
 import styles from './LinksHeader.module.scss'
 
-function LinksHeader() {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
-
+function LinksHeader({windowWidth}) {
 
     return(
         <div className={styles.linkHeader}>
