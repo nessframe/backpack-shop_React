@@ -5,11 +5,10 @@ import Filter from './components/filter/Filter.jsx'
 import Header from './components/header/Header.jsx'
 import Intro from './components/intro/Intro.jsx'
 import Footer from './components/footer/Footer.jsx'
-import Form from './components/UI/form/Form.jsx'
 
 function App() {
   const [products, setProducts] = useState([
-    {id: 1, title: 'Jolly Bag', body: 'description about this product', cost: 1080, currency: '$', img: 'joly-bag.webp'},
+    {id: 1, title: 'Joly Bag', body: 'description about this product', cost: 1080, currency: '$', img: 'joly-bag.webp'},
     {id: 2, title: 'Urban Plus', body: 'description about this product', cost: 2830, currency: '$', img: 'joly-bag.webp'},
     {id: 3, title: 'Nicko Plus', body: 'description about this product', cost: 1090, currency: '$', img: 'joly-bag.webp'},
     {id: 4, title: 'Sweet Bag', body: 'description about this product', cost: 690, currency: '$', img: 'joly-bag.webp'},
@@ -35,7 +34,7 @@ function App() {
   window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
 
   const [query, setQuery] = useState('')
-  const [price, setPrice] = useState('all')
+  const [price, setPrice] = useState('')
   const [sort, setSort] = useState('')
 
   const filteredPrices = useMemo(() => {
