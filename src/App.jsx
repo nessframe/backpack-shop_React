@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import './App.scss'
 import Catalog from './components/catalog/Catalog.jsx'
 import Filter from './components/filter/Filter.jsx'
 import Header from './components/header/Header.jsx'
 import Intro from './components/intro/Intro.jsx'
 import Footer from './components/footer/Footer.jsx'
+import { useFilter } from './hooks/useFilter.js'
 
 function App() {
   const [products, setProducts] = useState([
@@ -36,29 +37,7 @@ function App() {
   const [query, setQuery] = useState('')
   const [price, setPrice] = useState('')
   const [sort, setSort] = useState('')
-
-  const filteredPrices = useMemo(() => {
-    if (price === '500_1000') return [...products].filter((p) => p.cost > 500 && p.cost < 1000)
-    if (price === '1000_2000') return [...products].filter((p) => p.cost > 1000 && p.cost < 2000)
-
-    return products
-  }, [price])
-
-  const sortedProducts = () => {
-    if (sort === 'alphabet') return [...filteredPrices].sort((p1, p2) => p1.title.localeCompare(p2.title))
-    if (sort === 'expensive') return [...filteredPrices].sort((p1, p2) => p2.cost - p1.cost)
-    if (sort === 'cheapest') return [...filteredPrices].sort((p1, p2) => p1.cost - p2.cost)
-
-    return filteredPrices
-  }
-
-  const search = () => {
-    if (query) {
-      let products = sortedProducts();
-      return products.filter((p) => p.title.toLocaleLowerCase().includes(query.toLowerCase()));
-    }
-    return sortedProducts();
-  };
+  const filteringProducts = useFilter(products, price, sort, query)
 
     return (
       <main className='App'>
@@ -69,12 +48,11 @@ function App() {
             <Filter 
               setPrice={setPrice}
               setSort={setSort}
-
               inputQuery={query}
               setQuery={setQuery}
             />
             <Catalog 
-              products={search()}
+              products={filteringProducts}
             />
             <Footer 
               windowWidth={windowWidth}
